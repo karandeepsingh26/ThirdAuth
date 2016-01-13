@@ -9,6 +9,10 @@
    {% if user and not user.is_anonymous %}
      <li>
        <a>Hello {{ user.get_full_name|default:user.username }}!</a>
+       <form method='POST' action=''>{% csrf_token %}
+       <input type ='submit' value ='ka Up'  ></input>
+       </form>
+
      </li>
      <li>
        <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
@@ -22,6 +26,12 @@
      </li>
      <li>
        <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}">Login with Twitter</a>
+       <form method='POST' action=''>{% csrf_token %}
+       {{form.as_p}}
+
+       <input type ='submit' value ='karan'  ></input>
+              </form>
+
      </li>
    {% endif %}
    </ul>

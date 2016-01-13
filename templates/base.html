@@ -17,6 +17,7 @@
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
+
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log ' +
@@ -97,6 +98,10 @@
 
 <div id="status">
 </div>
+<form method='POST' action=''>{% csrf_token %}
+       {{form.as_p}}
 
+       <input type ='submit' value ='post'  ></input>
+              </form>
 </body>
 </html>

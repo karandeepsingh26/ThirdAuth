@@ -1,6 +1,8 @@
-from django.db import models
-from django.contrib.auth.models import User
+from __future__ import unicode_literals
 
+from django.db import models
+
+from django.contrib.auth.models import User
 class FacebookStatus(models.Model):
 
     class Meta:
@@ -20,3 +22,9 @@ class FacebookStatus(models.Model):
 
     def __unicode__(self):
         return self.message
+
+
+class FbStatus(models.Model):
+    text=models.CharField(max_length=120,blank=True,null=True)
+    def __unicode__(self):
+        return self.text
